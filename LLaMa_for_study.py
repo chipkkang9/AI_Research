@@ -46,10 +46,11 @@ lm_datasets = tokenized_datasets.map(
 
 # 5. Training Processs Setting and Execution
 training_args = TrainingArguments(
-    output_dir="./llama-pretrain-debug",
+    output_dir="./results",
     overwrite_output_dir=True,
-    num_train_epochs=1,
+    num_train_epochs=3,
     per_device_train_batch_size=4,
+    learning_rate=2e-5,
     save_steps=10_000,
     save_total_limit=2,
     logging_strategy="steps",
